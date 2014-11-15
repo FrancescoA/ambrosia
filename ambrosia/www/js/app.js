@@ -5,9 +5,9 @@
 // the 2nd parameter is an array of 'requires'
 // 'starter.services' is found in services.js
 // 'starter.controllers' is found in controllers.js
-var ambrosia = angular.module('ambrosia', ['ionic'])
+var ambrosia = angular.module('ambrosia', ['ionic', 'firebase', 'socialAuth.services'])
 
-ambrosia.run(function($ionicPlatform) {
+ambrosia.run(function($ionicPlatform, $state) {
   $ionicPlatform.ready(function() {
     // Hide the accessory bar by default (remove this to show the accessory bar above the keyboard
     // for form inputs)
@@ -18,6 +18,8 @@ ambrosia.run(function($ionicPlatform) {
       // org.apache.cordova.statusbar required
       StatusBar.styleDefault();
     }
+
+    $state.go('login');
   });
 })
 
@@ -31,7 +33,7 @@ ambrosia.config(function($stateProvider, $urlRouterProvider) {
 
 
     .state('login', {
-      url: "/",
+      url: "/login",
       templateUrl: "templates/login.html",
       controller: "LoginCtrl"
     })
@@ -87,4 +89,9 @@ ambrosia.config(function($stateProvider, $urlRouterProvider) {
   $urlRouterProvider.otherwise('/');
 
 });
+
+//Our Constant Vars
+angular.module('socialAuth.services',[])
+    .value('FIREBASE_REF','https://ambrosia.firebaseio.com/')
+    .value('userSession',{});
 
