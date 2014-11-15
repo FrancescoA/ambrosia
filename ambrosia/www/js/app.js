@@ -37,6 +37,13 @@ ambrosia.config(function($stateProvider, $urlRouterProvider) {
       templateUrl: "templates/login.html",
       controller: "LoginCtrl"
     })
+
+    .state('main', {
+      url: "/main",
+      templateUrl: "templates/main.html",
+      controller: "MainCtrl"
+    })
+
     // setup an abstract state for the tabs directive
     .state('tab', {
       url: "/tab",
