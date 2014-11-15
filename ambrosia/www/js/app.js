@@ -38,47 +38,47 @@ ambrosia.config(function($stateProvider, $urlRouterProvider) {
 
     // Each tab has its own nav history stack:
 
-    .state('tab.dash', {
-      url: '/dash',
+    .state('tab.history', {
+      url: '/history',
       views: {
-        'tab-dash': {
-          templateUrl: 'templates/tab-dash.html',
-          controller: 'DashCtrl'
+        'tab-history': {
+          templateUrl: 'templates/tab-history.html',
+          controller: 'HistoryCtrl'
         }
       }
     })
 
-    .state('tab.friends', {
-      url: '/friends',
+    .state('tab.planner', {
+      url: '/planner',
       views: {
-        'tab-friends': {
-          templateUrl: 'templates/tab-friends.html',
-          controller: 'FriendsCtrl'
+        'tab-planner': {
+          templateUrl: 'templates/tab-planner.html',
+          controller: 'PlannerCtrl'
         }
       }
     })
-    .state('tab.friend-detail', {
-      url: '/friend/:friendId',
+    .state('tab.planner-detail', {
+      url: '/planner/:friendId',
       views: {
-        'tab-friends': {
-          templateUrl: 'templates/friend-detail.html',
-          controller: 'FriendDetailCtrl'
+        'tab-planner': {
+          templateUrl: 'templates/planner-detail.html',
+          controller: 'PlannerDetailCtrl'
         }
       }
     })
 
-    .state('tab.account', {
-      url: '/account',
+    .state('tab.favorites', {
+      url: '/favorites',
       views: {
-        'tab-account': {
-          templateUrl: 'templates/tab-account.html',
-          controller: 'AccountCtrl'
+        'tab-favorites': {
+          templateUrl: 'templates/tab-favorites.html',
+          controller: 'FavoritesCtrl'
         }
       }
     });
 
   // if none of the above states are matched, use this as the fallback
-  $urlRouterProvider.otherwise('/tab/dash');
+  $urlRouterProvider.otherwise('/tab/history');
 
 });
 
