@@ -9,7 +9,7 @@ ambrosia.controller('LoginCtrl', function($scope, FIREBASE_REF, $firebaseSimpleL
     $scope.login=function(provider){
     	console.log(provider);
         firebase.authWithOAuthPopup(provider, function(error, authData) {
-        	console.log(authData);
+        	userSession.user = authData;
         });
     }
 
