@@ -7,7 +7,7 @@
       	<div class="bar bar-header item-input-inset">
   			<label class="item-input-wrapper">
     			<i class="icon ion-ios7-search placeholder-icon"></i>
-   			 	<input type="search" placeholder="Search">
+   			 	<input ng-model="searchText" type="search" placeholder="Search">
   			</label>
   			<button class="button button-clear">
   		  		Cancel
@@ -16,15 +16,15 @@
 
       
 	    <div class="list">
-	      <div ng-repeat="restaurant in foods">
+	      <div ng-repeat="restaurant in foods | filter:searchText">
 		      <div class="item item-divider item-icon-left" ng-click="section_click(restaurant.name)">
 	       		<i class="icon ion-ios7-flag-outline"></i>
 			      {{restaurant.name}}
-	      		<span class="badge badge-positive">{{restaurant.menu.length}}</span>
+	      		<span class="badge badge-positive">{{filtered.length}}</span>
 		      </div>
 		      
 		      <div collapse="!show_section[restaurant.name]">
-	   	        <div ng-repeat="item in restaurant.menu" class="item">
+	   	        <div ng-repeat="item in filtered = (restaurant.menu | filter:searchText)" class="item">
 	   	        	<div>
 		           	<b>{{item.item_name}}</b>
 		           </div>
