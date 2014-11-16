@@ -21,7 +21,14 @@ ambrosia.controller('SearchCtrl', function($scope) {
   			low: $scope.p_lowerLimit;
   			high: $scope.p_upperLimit;
   		},
-  		
+  		carbs: {
+  			low: $scope.c_lowerLimit;
+  			high: $scope.c_upperLimit;
+  		},
+  		fat: {
+  			low: $scope.
+  		}
+
 
   	};
   }
