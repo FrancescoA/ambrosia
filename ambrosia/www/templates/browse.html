@@ -1,7 +1,31 @@
 <ion-view title="Browse">
 
-  <ion-content>
-  
-  </ion-content>
+
+      <content class="padding ambrosia_orange">
+      
+      
+      
+         <div class="list">
+	      <div class="item item-divider item-icon-left" ng-click="section_click('allergies')" ng-if="patient.allergies" my-patient-section>
+       		<i class="icon ion-ios7-flag-outline"></i>
+		      Allergies
+      		<span class="badge badge-positive">{{patient.allergies.length}}</span>
+	      </div>
+	      
+	      <div collapse="!show_section.allergies">
+   	      <div ng-repeat="item in patient.allergies" class="item">
+	           {{item.label}}
+	        </div>
+	      </div>
+	    </div>
+	    
+	    
+	    
+	    
+	    
+      </content>
+      
+
+
 
 </ion-view>

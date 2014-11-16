@@ -43,3 +43,15 @@
     background-position: center center;            /* optionally, center the image */
     height: 300px;
 }
+
+.collapse {display:none}
+.collapse.in {
+  display: block;
+}
+.collapsing {
+  position: relative;
+  height: 0;
+  overflow: hidden;
+  -webkit-transition: height 0.35s ease;
+  transition: height 0.35s ease;
+}
