@@ -24,16 +24,21 @@
 	text-align: center;
 }
 
-#login-button-bar {
+/*#login-button-bar {
 	position: relative;
 	left: 100px;
     width: 60px;
     top: 500px;
 	text-align: center;
+}*/
+
+#login-button {
+	align: center;
+	top: 400px;
 }
 
 #login-page {
-	background-image: url("LOGIN_Finished.jpg");
+	background-image: url("LOGIN_Finished2.jpg");
 	background-size:   cover;                      /* <------ */
     background-repeat: no-repeat;
     background-position: center center;
@@ -54,6 +59,25 @@
     background-repeat: no-repeat;
     background-position: center center;            /* optionally, center the image */
     height: 300px;
+}
+
+.nutrition span {
+	margin:5px;
+}
+.nutrition span[name="calories"] {
+	color: red;
+}
+
+.nutrition span[name="protein"] {
+	color: brown;
+}
+
+.nutrition span[name="carbs"] {
+	color: blue;
+}
+
+.nutrition span[name="fat"] {
+	color: green;
 }
 
 .collapse {display:none}
