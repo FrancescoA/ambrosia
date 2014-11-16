@@ -7,6 +7,7 @@ ambrosia.controller('SearchCtrl', function($scope) {
     "value_changed_callback": function(cause, leftValue, rightValue) {
         $(this).parent().find('.leftLabel').text(leftValue);
         $(this).parent().find('.rightLabel').text(rightValue);
+        $(this).parent().find('.item-note').text(leftValue + "  -  " + rightValue + " (g)");
     }
 });
 
