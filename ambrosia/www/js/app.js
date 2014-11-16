@@ -5,7 +5,7 @@
 // the 2nd parameter is an array of 'requires'
 // 'starter.services' is found in services.js
 // 'starter.controllers' is found in controllers.js
-var ambrosia = angular.module('ambrosia', ['ionic', 'firebase', 'socialAuth.services'])
+var ambrosia = angular.module('ambrosia', ['ionic', 'firebase', 'socialAuth.services','ui.bootstrap'])
 
 ambrosia.run(function($ionicPlatform, $state) {
   $ionicPlatform.ready(function() {
@@ -38,18 +38,6 @@ ambrosia.config(function($stateProvider, $urlRouterProvider) {
       controller: "LoginCtrl"
     })
 
-    .state('main', {
-      url: "/main",
-      templateUrl: "templates/main.html",
-      controller: "MainCtrl"
-    })
-
-    .state('browse', {
-      url: "/main/browse",
-      templateUrl: "templates/browse.html",
-      controller: "BrowseCtrl"
-    })
-
     // setup an abstract state for the tabs directive
     .state('tab', {
       url: "/tab",
@@ -57,8 +45,28 @@ ambrosia.config(function($stateProvider, $urlRouterProvider) {
       templateUrl: "templates/tabs.html"
     })
 
+
+
     // Each tab has its own nav history stack:
 
+    .state('tab.main', {
+      url: "/main",
+      views: {
+        'tab-main': {
+          templateUrl: "templates/main.html",
+          controller: "MainCtrl"
+        }   
+      }
+    })
+    .state('tab.browse', {
+      url: "/main/browse",
+      views: {
+        'tab-main' :{
+          templateUrl: "templates/browse.html",
+          controller: "BrowseCtrl"
+        }
+      }
+    })
     .state('tab.history', {
       url: '/history',
       views: {
@@ -105,6 +113,9 @@ ambrosia.config(function($stateProvider, $urlRouterProvider) {
 
 //Our Constant Vars
 angular.module('socialAuth.services',[])
+    .value('NUTRITION_REF', 'https://api.nutritionix.com/v1_1/search')
+    .value('NUTRITION_KEY', 'd8798a6f')
+    .value('NUTRITION_SECRET', 'e85bce38e01068373f79724f6b47c824')
     .value('FIREBASE_REF','https://ambrosia.firebaseio.com/')
     .value('userSession',{});
 
