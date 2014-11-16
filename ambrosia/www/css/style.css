@@ -13,9 +13,33 @@
 
 	 
 
+.ambrosia_orange {
+	background-color: #FFB167;
+}
 
+.ambrosia_grey {
+
+}
+
+.ambrosia_grey {
+	
+}
 
 #login-page {
-	background-color: #FFB167;
+	text-align: center;
+}
 
+#button_browse {
+	background-image: url("MAIN_Browse_Finished.jpg");
+}
+
+#button_query {
+	background-image: url("MAIN_Query_Finished.jpg");
+}
+
+#button_query, #button_browse {
+	margin-top: 0px;
+    margin-bottom: 0px; 
+    background-size: cover;
+	height: 700px;
 }
