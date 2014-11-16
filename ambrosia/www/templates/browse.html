@@ -3,26 +3,33 @@
 
       <ion-content class="ambrosia_orange">
       	<button ng-click='search()'> Search</button>
+ 
+      	<div class="bar bar-header item-input-inset">
+  			<label class="item-input-wrapper">
+    			<i class="icon ion-ios7-search placeholder-icon"></i>
+   			 	<input type="search" placeholder="Search">
+  			</label>
+  			<button class="button button-clear">
+  		  		Cancel
+  			</button>
+		</div>
+
       
-	        <div class="list">
-	          <div ng-repeat="restaurant in foods">
-			      <div class="item item-divider item-icon-left" ng-click="section_click(restaurant.name)">
-		       		<i class="icon ion-ios7-flag-outline"></i>
-				      {{restaurant.name}}
-		      		<span class="badge badge-positive">{{restaurant.menu.length}}</span>
-			      </div>
-			      
-			      <div collapse="!show_section[restaurant.name]">
-		   	        <div ng-repeat="item in restaurant.menu" class="item">
-			           {{item.item_name}}
-			        </div>
-			      </div>
-			  </div>
-		    </div>
-	    
-	    
-	    
-	    
+	    <div class="list">
+	      <div ng-repeat="restaurant in foods">
+		      <div class="item item-divider item-icon-left" ng-click="section_click(restaurant.name)">
+	       		<i class="icon ion-ios7-flag-outline"></i>
+			      {{restaurant.name}}
+	      		<span class="badge badge-positive">{{restaurant.menu.length}}</span>
+		      </div>
+		      
+		      <div collapse="!show_section[restaurant.name]">
+	   	        <div ng-repeat="item in restaurant.menu" class="item">
+		           {{item.item_name}}
+		        </div>
+		      </div>
+		  </div>
+	    </div> 
 	    
       </ion-content>
       
