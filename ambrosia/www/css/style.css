@@ -97,6 +97,10 @@
 	color: red;
 }
 
+.header-btn {
+	width: 45%;
+}
+
 .nutrition span[name="protein"] {
 	color: brown;
 }
