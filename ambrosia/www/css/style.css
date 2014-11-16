@@ -61,6 +61,25 @@
     height: 300px;
 }
 
+.nutrition span {
+	margin:5px;
+}
+.nutrition span[name="calories"] {
+	color: red;
+}
+
+.nutrition span[name="protein"] {
+	color: brown;
+}
+
+.nutrition span[name="carbs"] {
+	color: blue;
+}
+
+.nutrition span[name="fat"] {
+	color: green;
+}
+
 .collapse {display:none}
 .collapse.in {
   display: block;

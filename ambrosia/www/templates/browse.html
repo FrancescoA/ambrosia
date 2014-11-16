@@ -25,7 +25,15 @@
 		      
 		      <div collapse="!show_section[restaurant.name]">
 	   	        <div ng-repeat="item in restaurant.menu" class="item">
-		           {{item.item_name}}
+	   	        	<div>
+		           	<b>{{item.item_name}}</b>
+		           </div>
+		           <div class='nutrition'> 
+		           	<span name="calories">Calories: {{item.nf_calories}}</span>
+		           	<span name="protein">Protein: {{item.nf_protein}}</span>
+		           	<span name="carbs">Carbs: {{item.nf_total_carbohydrate}}</span>
+		           	<span name="fat">Fat: {{item.nf_total_fat}}</span>
+		           </div>
 		        </div>
 		      </div>
 		  </div>
