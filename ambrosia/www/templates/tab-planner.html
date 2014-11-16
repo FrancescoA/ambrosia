@@ -1,7 +1,7 @@
 <ion-view title="PLANNER" class="ambrosia_grey">
   <ion-content>
     <ion-list>
-      <ion-item ng-repeat="item in planner" type="item-text-wrap">
+      <ion-item class="food-item" ng-repeat="item in planner" type="item-text-wrap">
       	<div><b>{{item.item_name}}</b> </div>
       	<div class='nutrition'> 
 	       	<span name="calories">Cal: {{item.nf_calories}}</span>
@@ -14,7 +14,6 @@
 			<a ng-click="addItemToHistory(item)"><i class="icon ion-checkmark"></i></a>
 			<a ng-click="removeItem(item)"><i class="icon ion-close"></i></a>
 		</div>
-
 
       </ion-item>
     </ion-list>

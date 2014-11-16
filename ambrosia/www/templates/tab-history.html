@@ -18,11 +18,11 @@
       Analyze
     </button>
   </div>
-    <img id="img_result_finished" src="img/HISTORY_Finished.jpg" ></img>
+    <div id="sub-bar-fix"> </div>
 
     <div ng-hide="isAnalyze">
 	    <ion-list>
-	      <ion-item ng-repeat="item in history | filter:searchText" type="item-text-wrap">
+	      <ion-item class="food-item" ng-repeat="item in history | filter:searchText" type="item-text-wrap">
 	      	<div><b>{{item.item_name}}</b> </div>
 	      	<div class='nutrition'> 
 		       	<span name="calories">Cal: {{item.nf_calories}}</span>
