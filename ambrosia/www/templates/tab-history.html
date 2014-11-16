@@ -1,18 +1,31 @@
 <ion-view title="HISTORY">
 
-  <div class="bar bar-subheader">
+  
+  <ion-content class="ambrosia_grey">
+  <div class="bar bar-header item-input-inset">
+        <label class="item-input-wrapper">
+          <i class="icon ion-ios7-search placeholder-icon"></i>
+          <input ng-model="searchText" type="search" placeholder="Search">
+        </label>
+        <button class="button button-clear">
+            Cancel
+        </button>
+    </div>
+    <div class="bar bar-subheader">
     <button ng-click="isAnalyze = false" class="button button-outline button-positive header-btn">
-    	List
+      List
     </button>
     <button ng-click="isAnalyze = true" class="button button-outline button-balanced header-btn">
-    	Analyze
+      Analyze
     </button>
   </div>
   <ion-content class="ambrosia_grey">
+    <img id="img_result_finished" src="img/HISTORY_Finished.jpg" ></img>
+
 
     <div ng-hide="isAnalyze">
 	    <ion-list>
-	      <ion-item ng-repeat="item in history" type="item-text-wrap">
+	      <ion-item ng-repeat="item in history | filter:searchText" type="item-text-wrap">
 	      	<div><b>{{item.item_name}}</b> </div>
 	      	<div class='nutrition'> 
 		       	<span name="calories">Cal: {{item.nf_calories}}</span>

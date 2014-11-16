@@ -25,10 +25,6 @@ ambrosia.controller('HistoryCtrl', function($scope, userService, $window) {
 	console.log(historySum(userService.history));
 
 
-
-
-
-
 	var width = $window.innerWidth,
     height = 500,
     radius = Math.min(width, height) / 2;
