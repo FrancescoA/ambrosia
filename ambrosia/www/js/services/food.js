@@ -17,6 +17,16 @@ ambrosia.service('foodService', function($http, $firebase, NUTRITION_REF, NUTRIT
 	});
 
 
+  this.queryResult = [];
+
+  this.advancedSearch = function(queryObj){
+  	   	var all_restaurants = that.foods;
+  	   	console.log(all_restaurants);
+  	   	for (var i = 0 ; i < all_restaurants.length ; i++){
+  	   		restaurant_obj = all_restaurants[i];
+  	   	}
+  }
+
 
   this.cleanData = function(data) {
     var foods = {};

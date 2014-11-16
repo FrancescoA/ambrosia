@@ -78,7 +78,7 @@ ambrosia.config(function($stateProvider, $urlRouterProvider) {
       url: "/main/searchResult",
       views: {
         'tab-main' :{
-          templateUrl: "templates/searchResult.html",
+          templateUrl: "templates/browse.html",
           controller: "SearchResultCtrl"
         }
       }
@@ -123,7 +123,7 @@ ambrosia.config(function($stateProvider, $urlRouterProvider) {
     });
 
   // if none of the above states are matched, use this as the fallback
-  $urlRouterProvider.otherwise('/tab/history');
+  $urlRouterProvider.otherwise('/login');
 
 });
 

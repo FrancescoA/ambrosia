@@ -1,17 +1,40 @@
 <ion-view title="HISTORY">
-  <ion-content class="ambrosia_grey">
-    <img id="img_result_finished" src="img/HISTORY_Finished.jpg" ></img>
 
-    <ion-list>
-      <ion-item ng-repeat="item in history" type="item-text-wrap">
-      	<div><b>{{item.item_name}}</b> </div>
-      	<div class='nutrition'> 
-	       	<span name="calories">Cal: {{item.nf_calories}}</span>
-	       	<span name="protein">Protein: {{item.nf_protein}}</span>
-	       	<span name="carbs">Carbs: {{item.nf_total_carbohydrate}}</span>
-	       	<span name="fat">Fat: {{item.nf_total_fat}}</span>
-		</div>
-      </ion-item>
-    </ion-list>
+  
+  <ion-content class="ambrosia_grey">
+  <div class="bar bar-header item-input-inset">
+        <label class="item-input-wrapper">
+          <i class="icon ion-ios7-search placeholder-icon"></i>
+          <input ng-model="searchText" type="search" placeholder="Search">
+        </label>
+        <button class="button button-clear">
+            Cancel
+        </button>
+    </div>
+    <div class="bar bar-subheader">
+    <button ng-click="isAnalyze = false" class="button button-outline button-positive header-btn">
+      List
+    </button>
+    <button ng-click="isAnalyze = true" class="button button-outline button-balanced header-btn">
+      Analyze
+    </button>
+  </div>
+    <div ng-hide="isAnalyze">
+	    <ion-list>
+	      <ion-item ng-repeat="item in history | filter:searchText" type="item-text-wrap">
+	      	<div><b>{{item.item_name}}</b> </div>
+	      	<div class='nutrition'> 
+		       	<span name="calories">Cal: {{item.nf_calories}}</span>
+		       	<span name="protein">Protein: {{item.nf_protein}}</span>
+		       	<span name="carbs">Carbs: {{item.nf_total_carbohydrate}}</span>
+		       	<span name="fat">Fat: {{item.nf_total_fat}}</span>
+			</div>
+	      </ion-item>
+	    </ion-list>
+	</div>
+	<div ng-show="isAnalyze">
+		<p id="chart"></p>
+	</div>
+
   </ion-content>
 </ion-view>
