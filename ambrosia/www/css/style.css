@@ -16,15 +16,27 @@
 }
 
 .ambrosia_grey {
-
+	background-color: #464646;
 }
 
-.ambrosia_grey {
-	
-}
 
 #login-page {
 	text-align: center;
+}
+
+#login-button-bar {
+	position: relative;
+	left: 100px;
+    width: 60px;
+    top: 500px;
+	text-align: center;
+}
+
+#login-page {
+	background-image: url("LOGIN_Finished.jpg");
+	background-size:   cover;                      /* <------ */
+    background-repeat: no-repeat;
+    background-position: center center;
 }
 
 #button_browse {
