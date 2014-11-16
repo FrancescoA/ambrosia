@@ -1,5 +1,20 @@
 /* Empty. Add your own CSS if you like */
 
+#img_result_finished{
+		
+	height:200px ;
+	width: 100%;
+	display: block;
+	position:relative;
+  	margin-left: auto;
+  	margin-right: auto;
+	
+	}
+
+	 
+
+
+
 #login-page {
 	background-color: #FFB167;
 }
