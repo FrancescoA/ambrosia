@@ -5,7 +5,7 @@
 // the 2nd parameter is an array of 'requires'
 // 'starter.services' is found in services.js
 // 'starter.controllers' is found in controllers.js
-var ambrosia = angular.module('ambrosia', ['ionic', 'firebase', 'socialAuth.services'])
+var ambrosia = angular.module('ambrosia', ['ionic', 'firebase', 'socialAuth.services','ui.bootstrap'])
 
 ambrosia.run(function($ionicPlatform, $state) {
   $ionicPlatform.ready(function() {
