@@ -5,7 +5,6 @@ ambrosia.controller('LoginCtrl', function($scope, $state, FIREBASE_REF, $firebas
 
 	var firebase = new Firebase(FIREBASE_REF);
 
-
     $scope.login=function(provider){
     	console.log(provider);
         firebase.authWithOAuthPopup(provider, function(error, authData) {
@@ -14,5 +13,4 @@ ambrosia.controller('LoginCtrl', function($scope, $state, FIREBASE_REF, $firebas
         	$state.go('tab.main');
         });
     }
-
 })
