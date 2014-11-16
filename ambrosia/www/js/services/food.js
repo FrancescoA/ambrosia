@@ -3,6 +3,7 @@ ambrosia.service('foodService', function($http, $firebase, NUTRITION_REF, NUTRIT
 
   var firebase = new Firebase(FIREBASE_REF);
   this.foods = [];
+  this.queryResult = [];
   var that = this;
   firebase.onAuth(function(authData) {
   	if (authData) {
@@ -17,14 +18,34 @@ ambrosia.service('foodService', function($http, $firebase, NUTRITION_REF, NUTRIT
 	});
 
 
-  this.queryResult = [];
+
 
   this.advancedSearch = function(queryObj){
-  	   	var all_restaurants = that.foods;
+  	   	var all_restaurants = that.foods.slice(0);
   	   	console.log(all_restaurants);
+  	   	var results = [];
   	   	for (var i = 0 ; i < all_restaurants.length ; i++){
-  	   		restaurant_obj = all_restaurants[i];
+  	   		var restaurant_obj = $.extend({}, all_restaurants[i]);
+  	   		var menu = restaurant_obj.menu;
+  	   		restaurant_obj.menu = [];
+  	   		results.push(restaurant_obj)
+  	   		for (var j =0 ; j < menu.length ; j++) {
+  	   			var item = menu[j];
+
+  	   			var protein = item.nf_protein;
+  	   			var fat = item.nf_total_fat;
+  	   			var carbs = item.nf_total_carbohydrate;
+
+  	   			var valid = (protein > queryObj.protein.low && protein < queryObj.protein.high && fat > queryObj.fat.low && fat < queryObj.fat.high && carbs > queryObj.carbs.low && carbs < queryObj.carbs.high);
+
+  	   			if (valid) {
+  	   				results[i].menu.push(item);
+  	   			}
+
+  	   		}
   	   	}
+  	   	console.log(results);
+  	   	that.queryResult = results;
   }
 
 
