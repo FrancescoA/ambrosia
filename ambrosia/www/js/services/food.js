@@ -36,7 +36,7 @@ ambrosia.service('foodService', function($http, $firebase, NUTRITION_REF, NUTRIT
   	   			var fat = item.nf_total_fat;
   	   			var carbs = item.nf_total_carbohydrate;
 
-  	   			var valid = (protein > queryObj.protein.low && protein < queryObj.protein.high && fat > queryObj.fat.low && fat < queryObj.fat.high && carbs > queryObj.carbs.low && carbs < queryObj.carbs.high);
+  	   			var valid = (protein >= queryObj.protein.low && protein <= queryObj.protein.high && fat >= queryObj.fat.low && fat <= queryObj.fat.high && carbs >= queryObj.carbs.low && carbs <= queryObj.carbs.high);
 
   	   			if (valid) {
   	   				results[i].menu.push(item);
