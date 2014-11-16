@@ -11,8 +11,6 @@
 	
 	}
 
-	 
-
 .ambrosia_orange {
 	background-color: #FFB167;
 }
@@ -40,6 +38,8 @@
 #button_query, #button_browse {
 	margin-top: 0px;
     margin-bottom: 0px; 
-    background-size: cover;
-	height: 700px;
+    background-size:   cover;                      /* <------ */
+    background-repeat: no-repeat;
+    background-position: center center;            /* optionally, center the image */
+    height: 300px;
 }
