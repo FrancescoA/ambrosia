@@ -37,6 +37,13 @@ ambrosia.config(function($stateProvider, $urlRouterProvider) {
       templateUrl: "templates/login.html",
       controller: "LoginCtrl"
     })
+
+    .state('main', {
+      url: "/main",
+      templateUrl: "templates/main.html",
+      controller: "MainCtrl"
+    })
+
     // setup an abstract state for the tabs directive
     .state('tab', {
       url: "/tab",
@@ -86,7 +93,7 @@ ambrosia.config(function($stateProvider, $urlRouterProvider) {
     });
 
   // if none of the above states are matched, use this as the fallback
-  $urlRouterProvider.otherwise('/');
+  $urlRouterProvider.otherwise('/tab/history');
 
 });
 

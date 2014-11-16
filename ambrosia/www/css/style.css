@@ -1,6 +1,36 @@
 /* Empty. Add your own CSS if you like */
 
+#img_result_finished{
+		
+	height:250px ;
+	width: 100%;
+	display: block;
+	position:relative;
+  	margin-left: auto;
+  	margin-right: auto;
+	
+	}
+
+	 
+
+
+
 #login-page {
 	background-color: #FFB167;
 	text-align: center;
+}
+
+#button_browse {
+	background-image: url("MAIN_Browse_Finished.jpg");
+}
+
+#button_query {
+	background-image: url("MAIN_Query_Finished.jpg");
+}
+
+#button_query, #button_browse {
+	margin-top: 0px;
+    margin-bottom: 0px; 
+    background-size: cover;
+	height: 700px;
 }
