@@ -1,7 +1,25 @@
 ambrosia.service('foodService', function($http, NUTRITION_REF, NUTRITION_KEY, NUTRITION_SECRET) {
   
-  this.search = function(query, callback) { 
-   	$http.post(NUTRITION_REF, 
+  this.cleanData = function(data) {
+    var foods = {};
+  	data.hits.forEach(function(item){
+	  	var brand_name = item.fields.brand_name;
+	  	if (foods[brand_name]) {
+		  foods[brand_name].push(item.fields);
+	  	} else {
+	  	  foods[brand_name] = [];
+	  	}
+  	});
+  	var ret = [];
+ 	for (var key in foods) {
+ 		var obj = {name: key, menu: foods[key]};
+ 		ret.push(obj);
+	}
+  	return ret;
+  }
+
+  this.search = function(query) { 
+   	return $http.post(NUTRITION_REF, 
 
    		{
 	 		"appId": NUTRITION_KEY,
@@ -21,8 +39,7 @@ ambrosia.service('foodService', function($http, NUTRITION_REF, NUTRITION_KEY, NU
 
    		).
   	  success(function(data, status, headers, config) {
-  	  	console.log(data)
-  	  	callback(data.hits);
+
   	  }).
   	  error(function(data, status, headers, config) {
 

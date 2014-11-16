@@ -1,23 +1,24 @@
 <ion-view title="Browse">
 
 
-      <ion-content class="padding ambrosia_orange">
+      <ion-content class="ambrosia_orange">
       	<button ng-click='search()'> Search</button>
       
-      
-         <div class="list">
-	      <div class="item item-divider item-icon-left" ng-click="section_click('allergies')" ng-if="patient.allergies" my-patient-section>
-       		<i class="icon ion-ios7-flag-outline"></i>
-		      Allergies
-      		<span class="badge badge-positive">{{patient.allergies.length}}</span>
-	      </div>
-	      
-	      <div collapse="!show_section.allergies">
-   	      <div ng-repeat="item in patient.allergies" class="item">
-	           {{item.label}}
-	        </div>
-	      </div>
-	    </div>
+	        <div class="list">
+	          <div ng-repeat="restaurant in foods">
+			      <div class="item item-divider item-icon-left" ng-click="section_click('allergies')" ng-if="patient.allergies" my-patient-section>
+		       		<i class="icon ion-ios7-flag-outline"></i>
+				      {{restaurant.name}}
+		      		<span class="badge badge-positive">{{patient.allergies.length}}</span>
+			      </div>
+			      
+			      <div collapse="!show_section.allergies">
+		   	        <div ng-repeat="item in restaurant.menu" class="item">
+			           {{item.item_name}}
+			        </div>
+			      </div>
+			  </div>
+		    </div>
 	    
 	    
 	    
