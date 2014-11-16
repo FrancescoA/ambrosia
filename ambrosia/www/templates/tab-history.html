@@ -1,17 +1,32 @@
 <ion-view title="HISTORY">
+
+  <div class="bar bar-subheader">
+    <button ng-click="isAnalyze = false" class="button button-outline button-positive">
+    	List
+    </button>
+    <button ng-click="isAnalyze = true" class="button button-outline button-balanced">
+    	Analyze
+    </button>
+  </div>
   <ion-content class="ambrosia_grey">
     <img id="img_result_finished" src="img/HISTORY_Finished.jpg" ></img>
 
-    <ion-list>
-      <ion-item ng-repeat="item in history" type="item-text-wrap">
-      	<div><b>{{item.item_name}}</b> </div>
-      	<div class='nutrition'> 
-	       	<span name="calories">Cal: {{item.nf_calories}}</span>
-	       	<span name="protein">Protein: {{item.nf_protein}}</span>
-	       	<span name="carbs">Carbs: {{item.nf_total_carbohydrate}}</span>
-	       	<span name="fat">Fat: {{item.nf_total_fat}}</span>
-		</div>
-      </ion-item>
-    </ion-list>
+    <div ng-hide="isAnalyze">
+	    <ion-list>
+	      <ion-item ng-repeat="item in history" type="item-text-wrap">
+	      	<div><b>{{item.item_name}}</b> </div>
+	      	<div class='nutrition'> 
+		       	<span name="calories">Cal: {{item.nf_calories}}</span>
+		       	<span name="protein">Protein: {{item.nf_protein}}</span>
+		       	<span name="carbs">Carbs: {{item.nf_total_carbohydrate}}</span>
+		       	<span name="fat">Fat: {{item.nf_total_fat}}</span>
+			</div>
+	      </ion-item>
+	    </ion-list>
+	</div>
+	<div ng-show="isAnalyze">
+		SHERRRYYYYY
+	</div>
+
   </ion-content>
 </ion-view>

@@ -78,7 +78,7 @@ ambrosia.config(function($stateProvider, $urlRouterProvider) {
       url: "/main/searchResult",
       views: {
         'tab-main' :{
-          templateUrl: "templates/searchResult.html",
+          templateUrl: "templates/browse.html",
           controller: "SearchResultCtrl"
         }
       }

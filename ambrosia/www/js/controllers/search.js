@@ -15,6 +15,17 @@ ambrosia.controller('SearchCtrl', function($scope) {
     $scope.total_upperLimit = 0;
 
 
+  $scope.makeQuery = function() {
+  	var query_obj = {
+  		protein: {
+  			low: $scope.p_lowerLimit;
+  			high: $scope.p_upperLimit;
+  		},
+  		
+
+  	};
+  }
+
   $('.nstSlider').nstSlider({
     "left_grip_selector": ".leftGrip",
     "right_grip_selector": ".rightGrip",
