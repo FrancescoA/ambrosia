@@ -1,4 +1,4 @@
-ambrosia.controller('SearchResultCtrl', function($scope, foodService, $ionicPopup, userService) {
+ambrosia.controller('SearchResultCtrl', function($scope, foodService, $ionicPopup, userService, userSession) {
 
 
   $scope.foods = foodService.queryResult;
