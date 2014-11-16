@@ -1,4 +1,4 @@
-ambrosia.controller('LoginCtrl', function($scope, FIREBASE_REF, $firebaseSimpleLogin, userSession) {
+ambrosia.controller('LoginCtrl', function($scope, $state, FIREBASE_REF, $firebaseSimpleLogin, userSession) {
 	userSession.auth=$firebaseSimpleLogin(new Firebase(FIREBASE_REF));
 	
 	console.log(FIREBASE_REF);
@@ -10,6 +10,8 @@ ambrosia.controller('LoginCtrl', function($scope, FIREBASE_REF, $firebaseSimpleL
     	console.log(provider);
         firebase.authWithOAuthPopup(provider, function(error, authData) {
         	userSession.user = authData;
+        	firebase.child('users').child(authData.uid).set(authData);
+        	$state.go('main');
         });
     }
 
