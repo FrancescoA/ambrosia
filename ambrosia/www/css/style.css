@@ -55,6 +55,11 @@
     background-position: center center;
 }
 
+
+.food-item {
+	font-size: .85em;
+}
+
 #button_browse {
 	background-image: url("MAIN_Browse_Finished.jpg");
 }
