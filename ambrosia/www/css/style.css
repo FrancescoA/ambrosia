@@ -1,15 +1,13 @@
 /* Empty. Add your own CSS if you like */
 
 #img_result_finished{
-		
-	height:250px ;
+
 	width: 100%;
 	display: block;
 	position:relative;
   	margin-left: auto;
   	margin-right: auto;
-	
-	}
+}
 
 .ambrosia_orange {
 	background-color: #FFB167;
@@ -68,6 +66,10 @@
     background-repeat: no-repeat;
     background-position: center center;            /* optionally, center the image */
     height: 300px;
+}
+
+#history_list {
+	padding-top: 2cm;
 }
 
 .options {
