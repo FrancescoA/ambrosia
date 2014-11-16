@@ -5,7 +5,6 @@ ambrosia.controller('LoginCtrl', function($scope, $state, newUserService, FIREBA
 	var firebase = new Firebase(FIREBASE_REF);
 
     $scope.login = function(provider){
-
     	console.log(provider);
         firebase.authWithOAuthPopup(provider, function(error, authData) {
         	console.log(authData);
@@ -17,9 +16,9 @@ ambrosia.controller('LoginCtrl', function($scope, $state, newUserService, FIREBA
         		} else {
         			firebase.child('users').child(authData.uid).set(authData);
         			newUserService.generateData(authData.uid);
+        			userSession.user = authData;
         		}
         	});
-     
         	$state.go('tab.main');
         });
     }

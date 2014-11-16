@@ -1,5 +1,24 @@
-ambrosia.service('foodService', function($http, NUTRITION_REF, NUTRITION_KEY, NUTRITION_SECRET) {
+ambrosia.service('foodService', function($http, $firebase, NUTRITION_REF, NUTRITION_KEY, NUTRITION_SECRET, FIREBASE_REF, userSession) {
   
+
+  var firebase = new Firebase(FIREBASE_REF);
+  this.foods = [];
+  var that = this;
+  firebase.onAuth(function(authData) {
+  	if (authData) {
+    	var restaurants = firebase.child('users').child(authData.uid).child('restaurants');
+    	console.log("User ID: " + authData.uid + ", Provider: " + authData.provider);
+    	var sync = $firebase(restaurants);
+  		that.foods = sync.$asArray();
+  		console.log(that.foods);
+  	} else {
+    	// user is logged out
+  	}
+	});
+
+
+  
+
   this.cleanData = function(data) {
     var foods = {};
   	data.hits.forEach(function(item){
@@ -46,6 +65,9 @@ ambrosia.service('foodService', function($http, NUTRITION_REF, NUTRITION_KEY, NU
   	  });
 	}
 
+
+
+
 	this.searchBrand = function(brandName) {
 		return $http.post(NUTRITION_REF,
 		{
@@ -55,7 +77,7 @@ ambrosia.service('foodService', function($http, NUTRITION_REF, NUTRITION_KEY, NU
   			"offset": 0,
   			"limit" : 50,
   			"queries":{
-    			"brand_name": "McDonalds"
+    			"brand_name": brandName
   			},
   			"sort" : {
   				"field" : "brand_name.sortable_na",

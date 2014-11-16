@@ -124,7 +124,7 @@ ambrosia.config(function($stateProvider, $urlRouterProvider) {
 angular.module('socialAuth.services',[])
     .value('NUTRITION_REF', 'https://api.nutritionix.com/v1_1/search')
     .value('NUTRITION_KEY', 'd8798a6f')
-    .value('DEFAULT_RESTAURANTS', ["Subway","Au Bon Pain","Chipotle","McDonalds","IHOP","Papa Johns","TGI Fridays"])
+    .value('DEFAULT_RESTAURANTS', ["Panda Express", "Subway","Au Bon Pain","Chipotle","McDonalds","IHOP","Papa Johns","TGI Fridays"])
     .value('NUTRITION_SECRET', 'e85bce38e01068373f79724f6b47c824')
     .value('FIREBASE_REF','https://ambrosia.firebaseio.com/')
     .value('userSession',{});

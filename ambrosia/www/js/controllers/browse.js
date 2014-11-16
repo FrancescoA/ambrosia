@@ -3,7 +3,8 @@ ambrosia.controller('BrowseCtrl', function($scope, foodService) {
 
   $scope.searchText = "";
 
-  $scope.foods = [];
+  $scope.foods = foodService.foods;
+  
   $scope.filtered = [];
   $scope.search = function(query) {
   	foodService.search(query).then(function(response){
@@ -11,6 +12,7 @@ ambrosia.controller('BrowseCtrl', function($scope, foodService) {
       console.log($scope.foods);
     });
   }
+
 
   $scope.show_section = {};
 
