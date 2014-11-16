@@ -1,4 +1,4 @@
-ambrosia.controller('SearchCtrl', function($scope) {
+ambrosia.controller('SearchCtrl', function($scope, foodService) {
 
 
 	$scope.p_lowerLimit = 0;
@@ -18,19 +18,19 @@ ambrosia.controller('SearchCtrl', function($scope) {
   $scope.makeQuery = function() {
   	var query_obj = {
   		protein: {
-  			low: $scope.p_lowerLimit;
-  			high: $scope.p_upperLimit;
+  			low: $scope.p_lowerLimit,
+  			high: $scope.p_upperLimit
   		},
   		carbs: {
-  			low: $scope.c_lowerLimit;
-  			high: $scope.c_upperLimit;
+  			low: $scope.c_lowerLimit,
+  			high: $scope.c_upperLimit
   		},
   		fat: {
-  			low: $scope.
+  			low: $scope.f_lowerLimit,
+  			high: $scope.f_upperLimit
   		}
-
-
-  	};
+  	}
+  	foodService.advancedSearch(query_obj);
   }
 
   $('.nstSlider').nstSlider({
