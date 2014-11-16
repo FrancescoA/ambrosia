@@ -63,7 +63,7 @@ ambrosia.config(function($stateProvider, $urlRouterProvider) {
       views: {
         'tab-main' :{
           templateUrl: "templates/browse.html",
-          //controller: "BrowseCtrl"
+          controller: "BrowseCtrl"
         }
       }
     })
@@ -113,6 +113,9 @@ ambrosia.config(function($stateProvider, $urlRouterProvider) {
 
 //Our Constant Vars
 angular.module('socialAuth.services',[])
+    .value('NUTRITION_REF', 'https://api.nutritionix.com/v1_1/search')
+    .value('NUTRITION_KEY', 'd8798a6f')
+    .value('NUTRITION_SECRET', 'e85bce38e01068373f79724f6b47c824')
     .value('FIREBASE_REF','https://ambrosia.firebaseio.com/')
     .value('userSession',{});
 
