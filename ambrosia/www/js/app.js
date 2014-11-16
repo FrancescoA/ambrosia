@@ -76,6 +76,15 @@ ambrosia.config(function($stateProvider, $urlRouterProvider) {
         }
       }
     })
+    .state('tab.searchResult', {
+      url: "/main/searchResult",
+      views: {
+        'tab-main' :{
+          templateUrl: "templates/searchResult.html",
+          controller: "SearchResultCtrl"
+        }
+      }
+    })
     .state('tab.history', {
       url: '/history',
       views: {
