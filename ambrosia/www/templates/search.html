@@ -1,4 +1,4 @@
-<ion-view title="Search">
+<ion-view title="SEARCH">
 
 
     <ion-content class="padding ambrosia_grey">
@@ -12,7 +12,7 @@
             </span>
   		</div>
         <br />
-    	<div class="nstSlider" data-range_min="0" data-range_max="100" 
+    	<div name="protein" class="nstSlider" data-range_min="0" data-range_max="100" 
                        data-cur_min="20"    data-cur_max="80">
 
             <div class="bar"></div>
@@ -32,7 +32,7 @@
             </span>
         </div>
         <br />
-        <div class="nstSlider" data-range_min="0" data-range_max="100" 
+        <div name="carb" class="nstSlider" data-range_min="0" data-range_max="100" 
                        data-cur_min="20"    data-cur_max="80">
 
             <div class="bar"></div>
@@ -52,7 +52,7 @@
             </span>
         </div>
         <br />
-        <div class="nstSlider" data-range_min="0" data-range_max="100" 
+        <div name="fat" class="nstSlider" data-range_min="0" data-range_max="100" 
                        data-cur_min="20"    data-cur_max="80">
 
             <div class="bar"></div>
@@ -63,6 +63,21 @@
 
     </div>
 
+    <div name="totalCal" class="list">
+
+        <div class="item item-divider">
+            Total calories:
+            <span class="item-note">
+                placeHolder
+            </span>
+        </div>
+        <br />
+
+    </div>
+
+    <button id="searchBtn" class="button button-outline button-stable">
+        Search
+    </button>
 
 
   
