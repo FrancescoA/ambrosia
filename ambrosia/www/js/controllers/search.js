@@ -1,5 +1,6 @@
 ambrosia.controller('SearchCtrl', function($scope) {
 
+
 	$scope.p_lowerLimit = 0;
 	$scope.p_upperLimit = 0;
     $scope.c_lowerLimit = 0;
@@ -13,13 +14,13 @@ ambrosia.controller('SearchCtrl', function($scope) {
     $scope.total_lowerLimit = 0;
     $scope.total_upperLimit = 0;
 
+
   $('.nstSlider').nstSlider({
     "left_grip_selector": ".leftGrip",
     "right_grip_selector": ".rightGrip",
     "value_bar_selector": ".bar",
     "value_changed_callback": function(cause, leftValue, rightValue) {
-        $(this).parent().find('.leftLabel').text(leftValue); //not using
-        $(this).parent().find('.rightLabel').text(rightValue); //not using
+
         $(this).parent().find('.item-note').text(leftValue + "  -  " + rightValue + " (g)");
         if ($(this).attr("name") == "protein" ){
         	$scope.p_lowerLimit = leftValue;
@@ -39,6 +40,6 @@ ambrosia.controller('SearchCtrl', function($scope) {
         
         
     }
-});
+	});
 
 });

@@ -36,7 +36,6 @@ ambrosia.service('foodService', function($http, NUTRITION_REF, NUTRITION_KEY, NU
 	  		}
 		}
 
-
    		).
   	  success(function(data, status, headers, config) {
 
@@ -46,4 +45,26 @@ ambrosia.service('foodService', function($http, NUTRITION_REF, NUTRITION_KEY, NU
 
   	  });
 	}
+
+	this.searchBrand = function(brandName) {
+		return $http.post(NUTRITION_REF,
+		{
+  			"appId":NUTRITION_KEY,
+  			"appKey":NUTRITION_SECRET,
+  			"fields":["item_id","item_name","item_description", "brand_id","brand_name","nf_calories", "nf_total_fat","nf_total_carbohydrate","nf_protein"],
+  			"offset": 0,
+  			"limit" : 50,
+  			"queries":{
+    			"brand_name": "McDonalds"
+  			},
+  			"sort" : {
+  				"field" : "brand_name.sortable_na",
+  				"order" : "asc"
+  			},
+  			"filters" : {
+  				"item_type" : 1
+  			}
+		});
+	}
+
 });

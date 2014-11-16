@@ -1,7 +1,10 @@
 ambrosia.controller('BrowseCtrl', function($scope, foodService) {
 
 
-  $scope.foods = {};
+  $scope.searchText = "";
+
+  $scope.foods = [];
+  $scope.filtered = [];
   $scope.search = function(query) {
   	foodService.search(query).then(function(response){
       $scope.foods = foodService.cleanData(response.data);
