@@ -17,7 +17,6 @@ ambrosia.service('foodService', function($http, $firebase, NUTRITION_REF, NUTRIT
 	});
 
 
-  
 
   this.cleanData = function(data) {
     var foods = {};
@@ -37,6 +36,7 @@ ambrosia.service('foodService', function($http, $firebase, NUTRITION_REF, NUTRIT
   	return ret;
   }
 
+  //deprecated
   this.search = function(query) { 
    	return $http.post(NUTRITION_REF, 
 
