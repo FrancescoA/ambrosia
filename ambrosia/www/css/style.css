@@ -11,8 +11,20 @@
 	
 	}
 
-#login-page {
+.ambrosia_orange {
 	background-color: #FFB167;
+}
+
+.ambrosia_grey {
+
+}
+
+.ambrosia_grey {
+	
+}
+
+#login-page {
+	text-align: center;
 }
 
 #button_browse {
