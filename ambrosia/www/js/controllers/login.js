@@ -1,4 +1,4 @@
-ambrosia.controller('LoginCtrl', function($scope, FIREBASE_REF, $firebaseSimpleLogin,userSession) {
+ambrosia.controller('LoginCtrl', function($scope, FIREBASE_REF, $firebaseSimpleLogin, userSession) {
 	userSession.auth=$firebaseSimpleLogin(new Firebase(FIREBASE_REF));
 	
 	console.log(FIREBASE_REF);
