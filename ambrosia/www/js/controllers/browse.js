@@ -1,4 +1,4 @@
-ambrosia.controller('BrowseCtrl', function($scope, $ionicPopup, foodService, userService) {
+ambrosia.controller('BrowseCtrl', function($scope, $ionicPopup, foodService, userService, userSession) {
 
 
   $scope.searchText = "";
@@ -14,20 +14,18 @@ ambrosia.controller('BrowseCtrl', function($scope, $ionicPopup, foodService, use
   }
  
   // A confirm dialog
- $scope.showConfirm = function() {
-  console.log("WORK");
+ $scope.showConfirm = function(item) {
+  console.log(item);
    var confirmPopup = $ionicPopup.confirm({
-     title: 'Consume Ice Cream',
-     template: 'Are you sure you want to eat this ice cream?'
+     title: 'Add to planner',
+     template: 'Are you sure you want add this to your planner?'
    });
    confirmPopup.then(function(res) {
-     if(res) {
-       console.log('You are sure');
-     } else {
-       console.log('You are not sure');
-     }
+      userService.addToPlanner(userSession.user.uid, item);
    });
- };
+ }
+
+
 
   $scope.show_section = {};
 

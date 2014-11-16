@@ -1,13 +1,18 @@
-ambrosia.controller('PlannerCtrl', function($scope, FIREBASE_REF, userSession) {
+ambrosia.controller('PlannerCtrl', function($scope, FIREBASE_REF, userSession, userService) {
   console.log('PlannerCtrl');
 
-  $scope.planner = [];
-  var planner = new Firebase(FIREBASE_REF).child('users').child(userSession.user.uid).child('planner');
-// Retrieve new posts as they are added to Firebase
-  planner.on("child_added", function(snapshot) {
-  	console.log(snapshot.value());
-  	$scope.planner.push(snapshot.value());
-  });
+  $scope.planner = userService.planner;
+
+
+
+  $scope.removeItem = function(item){
+  	userService.planner.$remove(item);
+  }
+
+  $scope.addItemToHistory = function(item){
+  	userService.history.$add(item);
+  	$scope.removeItem(item);
+  }
 
 
 })

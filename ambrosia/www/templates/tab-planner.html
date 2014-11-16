@@ -1,7 +1,20 @@
 <ion-view title="PLANNER" class="ambrosia_grey">
   <ion-content>
     <ion-list>
-      <ion-item ng-repeat="friend in friends" type="item-text-wrap" href="#/tab/planner/{{friend.id}}">
+      <ion-item ng-repeat="item in planner" type="item-text-wrap">
+      	<div><b>{{item.item_name}}</b> </div>
+      	<div class='nutrition'> 
+	       	<span name="calories">Cal: {{item.nf_calories}}</span>
+	       	<span name="protein">Protein: {{item.nf_protein}}</span>
+	       	<span name="carbs">Carbs: {{item.nf_total_carbohydrate}}</span>
+	       	<span name="fat">Fat: {{item.nf_total_fat}}</span>
+		</div>
+
+		<div class="options"> 
+			<a ng-click="addItemToHistory(item)"><i class="icon ion-checkmark"></i></a>
+			<a ng-click="removeItem(item)"><i class="icon ion-close"></i></a>
+		</div>
+
 
       </ion-item>
     </ion-list>
