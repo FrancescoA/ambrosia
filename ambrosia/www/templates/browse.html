@@ -22,7 +22,7 @@
 		      </div>
 		      
 		      <div collapse="!show_section[restaurant.name]">
-	   	        <div ng-repeat="item in filtered = (restaurant.menu | filter:searchText)" class="item">
+	   	        <div ng-click="openPopove()"ng-repeat="item in filtered = (restaurant.menu | filter:searchText)" class="item">
 	   	        	<div>
 		           	<b>{{item.item_name}}</b>
 		           </div>

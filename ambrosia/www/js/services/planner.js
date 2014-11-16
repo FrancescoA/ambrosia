@@ -1,5 +1,4 @@
 
-
 /**
  * A simple example service that returns some data.
  */

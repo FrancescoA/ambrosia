@@ -10,7 +10,7 @@ ambrosia.service('foodService', function($http, $firebase, NUTRITION_REF, NUTRIT
     	console.log("User ID: " + authData.uid + ", Provider: " + authData.provider);
     	var sync = $firebase(restaurants);
   		that.foods = sync.$asArray();
-  		console.log(that.foods);
+		console.log(that.foods);
   	} else {
     	// user is logged out
   	}
