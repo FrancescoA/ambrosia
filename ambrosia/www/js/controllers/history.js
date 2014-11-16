@@ -3,7 +3,7 @@ ambrosia.controller('HistoryCtrl', function($scope, userService, $window) {
 
 	$scope.history = userService.history;
 
-
+  $scope.searchText = "";
 	$scope.isAnalyze = false;
 
 
