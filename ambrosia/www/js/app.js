@@ -38,12 +38,6 @@ ambrosia.config(function($stateProvider, $urlRouterProvider) {
       controller: "LoginCtrl"
     })
 
-    .state('main', {
-      url: "/main",
-      templateUrl: "templates/main.html",
-      controller: "MainCtrl"
-    })
-
     // setup an abstract state for the tabs directive
     .state('tab', {
       url: "/tab",
@@ -51,8 +45,28 @@ ambrosia.config(function($stateProvider, $urlRouterProvider) {
       templateUrl: "templates/tabs.html"
     })
 
+
+
     // Each tab has its own nav history stack:
 
+    .state('tab.main', {
+      url: "/main",
+      views: {
+        'tab-main': {
+          templateUrl: "templates/main.html",
+          controller: "MainCtrl"
+        }   
+      }
+    })
+    .state('tab.browse', {
+      url: "/main/browse",
+      views: {
+        'tab-main' :{
+          templateUrl: "templates/browse.html",
+          //controller: "BrowseCtrl"
+        }
+      }
+    })
     .state('tab.history', {
       url: '/history',
       views: {
